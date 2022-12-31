@@ -28,6 +28,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c7c96631-f6df-409b-9d1c-0265826fe708"
+      }
+    },
+    "owner": "trikuma"
   }
 }
