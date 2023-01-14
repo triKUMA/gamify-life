@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import {
   useFonts,
   Roboto_300Light,
@@ -9,6 +9,8 @@ import {
   Roboto_900Black,
 } from "@expo-google-fonts/roboto";
 import { FirebaseManager } from "./managers/FirebaseManager";
+
+import RouteManager from "./managers/RouteManager";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,23 +23,8 @@ export default function App() {
 
   return fontsLoaded ? (
     <FirebaseManager>
-      <View style={styles.container}>
-        <StatusBar style="light" />
-        <Text style={[styles.text]}>Hello, world!</Text>
-      </View>
+      <StatusBar style="light" />
+      <RouteManager />
     </FirebaseManager>
   ) : null;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "#fff",
-    fontFamily: "Roboto_500Medium",
-  },
-});
