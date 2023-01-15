@@ -1,0 +1,9 @@
+{
+  "name": "dark",
+  "themeStyles": {
+    "colour": {
+      "primary": "#fff",
+      "secondary": "#000"
+    }
+  }
+}

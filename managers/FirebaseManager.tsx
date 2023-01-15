@@ -12,13 +12,17 @@ interface FirebaseContext {
 
 const FirebaseContext = createContext<FirebaseContext | null>(null);
 
-export const FirebaseManager = ({ children }: { children: ReactNode }) => {
+interface FirebaseManagerProps {
+  children: ReactNode;
+}
+
+export default function FirebaseManager(props: FirebaseManagerProps) {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   const db = getFirestore(app);
 
-  return <FirebaseContext.Provider value={{ app, auth, db }}>{children}</FirebaseContext.Provider>;
-};
+  return <FirebaseContext.Provider value={{ app, auth, db }}>{props.children}</FirebaseContext.Provider>;
+}
 
 export const useFirebaseCtx = () => {
   const firebaseCtx = useContext(FirebaseContext);

@@ -1,0 +1,9 @@
+{
+  "name": "light",
+  "themeStyles": {
+    "colour": {
+      "primary": "#000",
+      "secondary": "#fff"
+    }
+  }
+}

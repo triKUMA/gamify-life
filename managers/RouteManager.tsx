@@ -13,7 +13,14 @@ const { Navigator, Screen } = createNativeStackNavigator<RouteParamList>();
 export default function Routes() {
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="Index" screenOptions={{ headerShown: false, animation: "none" }}>
+      <Navigator
+        initialRouteName="Index"
+        screenOptions={{
+          headerShown: false,
+          animation: "none",
+          contentStyle: { backgroundColor: "transparent" },
+        }}
+      >
         <Screen name="Index" component={Index} />
         <Screen name="Home" component={Home} />
       </Navigator>

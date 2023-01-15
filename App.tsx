@@ -1,30 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet } from "react-native";
-import {
-  useFonts,
-  Roboto_300Light,
-  Roboto_400Regular,
-  Roboto_500Medium,
-  Roboto_700Bold,
-  Roboto_900Black,
-} from "@expo-google-fonts/roboto";
-import { FirebaseManager } from "./managers/FirebaseManager";
-
+import { View } from "react-native";
+import FirebaseManager from "./managers/FirebaseManager";
 import RouteManager from "./managers/RouteManager";
+import ThemeManager from "./managers/ThemeManager";
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    Roboto_300Light,
-    Roboto_400Regular,
-    Roboto_500Medium,
-    Roboto_700Bold,
-    Roboto_900Black,
-  });
-
-  return fontsLoaded ? (
+  return (
     <FirebaseManager>
-      <StatusBar style="light" />
-      <RouteManager />
+      <ThemeManager theme="dark">
+        <RouteManager />
+      </ThemeManager>
     </FirebaseManager>
-  ) : null;
+  );
 }
